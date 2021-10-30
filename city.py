@@ -41,8 +41,11 @@ for city in sorted_l:
         else:
             # write list to file named {p1+p2}.json
             if l != []:
+                # let's also remove duplicates (since some cities like "Ymeray, FR" would appear twice in the ym.json file)
+                new_l = list(dict.fromkeys(l))
+
                 with open('cities/' + p1+p2 + '.json', 'w') as f:
-                    json.dump(l, f)
+                    json.dump(new_l, f)
                 f.close()
 
             # clear list
