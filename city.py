@@ -43,6 +43,7 @@ for city in sorted_l:
             if l != []:
                 with open('cities/' + p1+p2 + '.json', 'w') as f:
                     json.dump(l, f)
+                f.close()
 
             # clear list
             l = []
